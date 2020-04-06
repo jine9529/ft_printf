@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pow.c                                           :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsouchet <bsouchet@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jiin <jiin@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/05/03 22:28:37 by bsouchet          #+#    #+#             */
-/*   Updated: 2017/05/03 22:28:51 by bsouchet         ###   ########.fr       */
+/*   Created: 2020/03/07 16:59:49 by jiin              #+#    #+#             */
+/*   Updated: 2020/03/07 17:00:59 by jiin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-double	ft_pow(double n, int pow)
+void		ft_putendl_fd(char *s, int fd)
 {
-	return (pow ? n * ft_pow(n, pow - 1) : 1);
+    write(fd, &s, strlen(s));
+    write(fd, "\n", 1);
 }

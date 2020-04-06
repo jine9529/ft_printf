@@ -3,25 +3,43 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsouchet <bsouchet@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jiin <jiin@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/05/03 22:28:08 by bsouchet          #+#    #+#             */
-/*   Updated: 2017/05/06 01:14:08 by bsouchet         ###   ########.fr       */
+/*   Created: 2020/03/03 00:15:19 by jiin              #+#    #+#             */
+/*   Updated: 2020/03/03 00:39:09 by jiin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(char *s)
+int			is_num(const char s)
 {
-	long	r;
-	short	sign;
+	if (s >= 48 && s <= 57)
+		return (1);
+	else
+		return (0);
+}
 
-	r = 0;
+int			ft_atoi(const char *str)
+{
+	int i;
+	int sign;
+	long long result;
+
+	i = 0;
 	sign = 1;
-	if (*s == '-' || *s == '+')
-		sign = 44 - *s++;
-	while (*s >= '0' && *s <= '9')
-		r = r * 10 + *s++ - '0';
-	return (sign * (int)r);
+	result = 0;
+	if (str[i] == '+' || str[i] == '-')
+	{
+		if (str[i] == '-')
+			sign = sign * -1;
+		i++;
+	}
+	while (str[i] != '\0' && is_num(str[i]))
+	{
+		result = (result * 10) + (str[i] - '0');
+		i++;
+	}
+	result = sign * result;
+	return (result);
 }

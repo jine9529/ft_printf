@@ -1,26 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_wstrlen.c                                       :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsouchet <bsouchet@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jiin <jiin@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/05/03 22:30:20 by bsouchet          #+#    #+#             */
-/*   Updated: 2017/05/03 22:30:20 by bsouchet         ###   ########.fr       */
+/*   Created: 2020/03/03 17:44:15 by jiin              #+#    #+#             */
+/*   Updated: 2020/03/03 17:54:47 by jiin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ft_printf.h"
+#include "libft.h"
 
-size_t		ft_wstrlen(unsigned *s)
+int			ft_isprint(int c)
 {
-	size_t	len;
-
-	len = 0;
-	while (*s != L'\0')
-	{
-		len += ft_wcharlen(*s);
-		++s;
-	}
-	return (len);
+    return (c >= 32 && c <= 126);
 }

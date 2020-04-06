@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_wcharlen.c                                      :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsouchet <bsouchet@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jiin <jiin@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/05/03 22:30:13 by bsouchet          #+#    #+#             */
-/*   Updated: 2017/05/05 23:43:19 by bsouchet         ###   ########.fr       */
+/*   Created: 2020/03/03 17:39:33 by jiin              #+#    #+#             */
+/*   Updated: 2020/03/03 17:43:04 by jiin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_wcharlen(unsigned wc)
+int			ft_isascii(int c)
 {
-	if (wc < 0x80)
-		return (1);
-	else if (wc < 0x800)
-		return (2);
-	else if (wc < 0x10000)
-		return (3);
-	return (4);
+	return (c >= 0 && c <= 127);
 }
